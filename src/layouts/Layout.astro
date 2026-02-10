@@ -1,23 +1,49 @@
+---
+import Header from "../components/Header.astro";
+import "../assets/styles/global.css";
+import Footer from "../components/Footer.astro";
+import LightRays from "../blocks/LightRays";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>constaui</title>
+  </head>
+  <body
+    class="flex flex-col gap-8 p-8 min-h-dvh max-w-7xl mx-auto font-light relative"
+  >
+    <Header />
+    <slot />
+    <Footer />
+    <div class="w-full h-dvh absolute bottom-0 left-0 -z-10">
+      <LightRays
+        client:only="react"
+        raysOrigin="bottom-center"
+        raysColor="#ffffff"
+        raysSpeed={1}
+        lightSpread={0.5}
+        rayLength={3}
+        followMouse={true}
+        mouseInfluence={0.1}
+        noiseAmount={0.5}
+        distortion={0}
+        className="custom-rays"
+        pulsating={false}
+        fadeDistance={1}
+        saturation={1}
+      />
+    </div>
+  </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

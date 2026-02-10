@@ -1,0 +1,44 @@
+---
+import { Moon } from "@lucide/astro";
+import Button from "./Button.astro";
+---
+
+<header class="flex gap-8 items-center">
+  <div class="flex-1 flex gap-4 items-end">
+    <p class="text-3xl leading-5">constaui</p>
+    <p class="text-neutral-500 leading-3 hidden lg:block">
+      <time id="time"
+        >{
+          new Date().toLocaleTimeString("ru-RU", {
+            hour: "2-digit",
+            minute: "2-digit",
+          })
+        }</time
+      > Санкт-Петербург, Россия
+    </p>
+  </div>
+  <div class="flex-1 flex justify-between items-center">
+    <button><Moon class="text-neutral-50 stroke-1 size-7" /></button>
+    <Button><span class="leading-3">Связаться</span></Button>
+  </div>
+</header>
+
+<script>
+  const timeEl = document.getElementById("time");
+
+  function updateTime() {
+    const currentTime = new Date().toLocaleTimeString("ru-RU", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    if (!timeEl) {
+      return;
+    }
+    timeEl.textContent = currentTime;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    updateTime();
+    setInterval(updateTime, 1000);
+  });
+</script>

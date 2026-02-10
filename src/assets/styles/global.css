@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Manrope", sans-serif;
+  @apply bg-neutral-950 text-neutral-50;
+}
