@@ -1,0 +1,83 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { projects } from "../../data/projects";
+import { ChevronLeft, Link } from "@lucide/astro";
+import { Github } from "simple-icons-astro";
+
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: project,
+  }));
+}
+
+const {
+  title,
+  year,
+  description,
+  githubUrl,
+  url,
+  icon: Icon,
+  images,
+  stack,
+} = Astro.props;
+---
+
+<Layout>
+  <main class="grow flex gap-8 flex-col lg:flex-row relative">
+    <div class="lg:sticky lg:top-8 h-fit flex flex-col gap-4">
+      <div class="flex justify-between items-center">
+        <a
+          href="/"
+          class="bg-neutral-50 text-neutral-950 rounded-full p-2 w-fit"
+        >
+          <ChevronLeft />
+        </a>
+        <h1 class="text-2xl text-center uppercase">{title}</h1><div
+          class="border border-neutral-50 rounded-full p-2"
+        >
+          <Icon class="stroke-1" />
+        </div>
+      </div>
+      <p class="text-sm">{description}</p>
+
+      <div class="flex flex-col gap-2">
+        <h2 class="uppercase text-xl">Технологии</h2>
+        <p class="uppercase">{stack.join(" / ")}</p>
+      </div>
+
+      <p class="text-neutral-400">{year} г.</p>
+
+      <div class="flex gap-2 items-center">
+        {
+          githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="border border-neutral-50 rounded-full p-2"
+            >
+              <Github class="stroke-1" />
+            </a>
+          )
+        }
+        {
+          url && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-neutral-50 text-neutral-950 rounded-full p-2 w-fit"
+            >
+              <Link class="stroke-1" />
+            </a>
+          )
+        }
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      {images.map((src) => <img src={src} class="rounded-3xl" />)}
+    </div>
+  </main>
+</Layout>

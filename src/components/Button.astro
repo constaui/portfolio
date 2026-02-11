@@ -9,7 +9,7 @@ const Component = href ? "a" : "button";
 ---
 
 <Component
-  {...href && { href, target: "_blank" }}
+  {...href && { href, target: "_blank", rel: "noopener noreferrer" }}
   class:list={[
     "flex gap-2 rounded-3xl cursor-pointer uppercase border",
     outline

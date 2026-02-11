@@ -1,0 +1,19 @@
+---
+import { ChevronRight } from "@lucide/astro";
+
+const { title, slug, year, icon: Icon } = Astro.props;
+---
+
+<a
+  href={`/projects/${slug}`}
+  class="flex items-center text-nowrap gap-2 rounded-3xl cursor-pointer uppercase border border-neutral-50 py-2 px-3 hover:bg-neutral-50 hover:text-neutral-950 hover:outline hover:outline-neutral-50 transition-colors"
+>
+  <Icon class="stroke-1" />
+  <p class="mr-4">
+    {title} ({year})
+  </p>
+
+  <div class="bg-neutral-50 text-neutral-950 rounded-2xl">
+    <ChevronRight />
+  </div>
+</a>

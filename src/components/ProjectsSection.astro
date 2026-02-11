@@ -1,4 +1,17 @@
+---
+import ProjectItem from "./ProjectItem.astro";
+import { projects } from "../data/projects";
+---
+
 <section class="flex flex-col gap-4">
   <h2 class="text-2xl">Проекты</h2>
-  <div></div>
+  <ul class="flex gap-2 flex-wrap">
+    {
+      projects.map((project) => (
+        <li>
+          <ProjectItem {...project} />
+        </li>
+      ))
+    }
+  </ul>
 </section>

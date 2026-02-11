@@ -1,12 +1,15 @@
 ---
-import { Moon } from "@lucide/astro";
 import Button from "./Button.astro";
 ---
 
-<header class="flex gap-8 items-center">
+<header class="flex gap-8 items-center justify-between">
   <div class="flex-1 flex gap-4 items-end">
-    <p class="text-3xl leading-5">constaui</p>
-    <p class="text-neutral-500 leading-3 hidden lg:block">
+    <p
+      class="outline outline-offset-8 outline-transparent text-3xl leading-5 hover:outline-neutral-50 rounded-3xl transition-colors"
+    >
+      constaui
+    </p>
+    <p class="text-neutral-400 leading-3 hidden lg:block">
       <time id="time"
         >{
           new Date().toLocaleTimeString("ru-RU", {
@@ -17,10 +20,13 @@ import Button from "./Button.astro";
       > Санкт-Петербург, Россия
     </p>
   </div>
-  <div class="flex-1 flex justify-between items-center">
-    <button><Moon class="text-neutral-50 stroke-1 size-7" /></button>
-    <Button><span class="leading-3">Связаться</span></Button>
-  </div>
+
+  <a
+    href="https://t.me/constaui"
+    rel="noopener noreferrer"
+    class="bg-neutral-50 text-neutral-950 rounded-full py-2 px-2 leading-3 uppercase"
+    >Связаться</a
+  >
 </header>
 
 <script>
