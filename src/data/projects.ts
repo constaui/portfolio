@@ -1,10 +1,4 @@
-import {
-  Bot,
-  BottleWine,
-  Building2,
-  Utensils,
-  type Icon as IconType,
-} from "@lucide/astro";
+import { Bot, BottleWine, Building2, Utensils, Wallet, type Icon as IconType } from '@lucide/astro';
 
 type Project = {
   title: string;
@@ -18,38 +12,45 @@ type Project = {
   stack: string[];
 };
 
-const IMAGE_BASE_PATH = "/projects";
+const IMAGE_BASE_PATH = '/projects';
 
 export const projects: Project[] = [
   {
-    title: "Impersonator Chat",
+    title: 'Suillet',
     description:
-      "Веб-приложение, позволяющее пользователю общаться с известными личностями, которые 'оживают' с помощью AI. Персонажи ведут диалог в своём стиле, с учётом эпохи, знаний и мировоззрения.",
-    slug: "impersonator-chat",
+      'Мобильное приложение криптокошелька на блокчейне Sui с возможностью создания и восстановления кошелька по мнемонической фразе, перевода и пополнения средств через QR-код или адрес, просмотра истории транзакций, переключения сетей, а также сохранения и восстановления состояния приложения.',
+    slug: 'suillet',
     year: 2025,
-    githubUrl: "https://github.com/tiredtiredness/impersonator-chat",
-    url: "https://impersonator-chat.vercel.app",
-    icon: Bot,
+    githubUrl: 'https://github.com/tiredtiredness/evercode-wallet-labs',
+    icon: Wallet,
     images: [
-      `${IMAGE_BASE_PATH}/impersonator/1.webp`,
-      `${IMAGE_BASE_PATH}/impersonator/2.webp`,
+      `${IMAGE_BASE_PATH}/suillet/1.webp`,
+      `${IMAGE_BASE_PATH}/suillet/2.webp`,
+      `${IMAGE_BASE_PATH}/suillet/3.webp`,
+      `${IMAGE_BASE_PATH}/suillet/4.webp`,
+      `${IMAGE_BASE_PATH}/suillet/5.webp`,
     ],
-    stack: [
-      "Next",
-      "Typescript",
-      "Tailwind",
-      "OpenRouter API",
-      "DexieJS",
-      "FSD",
-    ],
+    stack: ['React Native', 'Redux'],
   },
   {
-    title: "mayorverse",
+    title: 'Impersonator Chat',
     description:
-      "Веб-приложение для игроков Cities: Skylines, где можно делиться фото городов и участвовать в создании чужих городов через опросы. Разработал fullstack-приложение с аутентификацией (JWT), REST API и проектированием базы данных.",
-    slug: "mayorverse",
+      "Веб-приложение, позволяющее пользователю общаться с известными личностями, которые 'оживают' с помощью AI. Персонажи ведут диалог в своём стиле, с учётом эпохи, знаний и мировоззрения.",
+    slug: 'impersonator-chat',
     year: 2025,
-    githubUrl: "https://github.com/tiredtiredness/mayorverse",
+    githubUrl: 'https://github.com/tiredtiredness/impersonator-chat',
+    url: 'https://impersonator-chat.vercel.app',
+    icon: Bot,
+    images: [`${IMAGE_BASE_PATH}/impersonator/1.webp`, `${IMAGE_BASE_PATH}/impersonator/2.webp`],
+    stack: ['Next', 'Typescript', 'Tailwind', 'OpenRouter API', 'DexieJS', 'FSD'],
+  },
+  {
+    title: 'mayorverse',
+    description:
+      'Веб-приложение для игроков Cities: Skylines, где можно делиться фото городов и участвовать в создании чужих городов через опросы. Разработал fullstack-приложение с аутентификацией (JWT), REST API и проектированием базы данных.',
+    slug: 'mayorverse',
+    year: 2025,
+    githubUrl: 'https://github.com/tiredtiredness/mayorverse',
     icon: Building2,
     images: [
       `${IMAGE_BASE_PATH}/mayorverse/1.webp`,
@@ -58,45 +59,36 @@ export const projects: Project[] = [
       `${IMAGE_BASE_PATH}/mayorverse/4.webp`,
       `${IMAGE_BASE_PATH}/mayorverse/5.webp`,
     ],
-    stack: [
-      "Next",
-      "Typescript",
-      "React Query",
-      "Tailwind",
-      "Nest",
-      "PostgreSQL",
-      "JWT",
-      "Prisma",
-    ],
+    stack: ['Next', 'Typescript', 'React Query', 'Tailwind', 'Nest', 'PostgreSQL', 'JWT', 'Prisma'],
   },
   {
-    title: "brut",
-    description: "Переделал устаревшую верстку на более актуальную.",
-    slug: "brut",
+    title: 'brut',
+    description: 'Переделал устаревшую верстку на более актуальную.',
+    slug: 'brut',
     year: 2024,
-    url: "https://brut.spb.ru/",
+    url: 'https://brut.spb.ru/',
     icon: BottleWine,
     images: [
       `${IMAGE_BASE_PATH}/brut/1.webp`,
       `${IMAGE_BASE_PATH}/brut/2.webp`,
       `${IMAGE_BASE_PATH}/brut/3.webp`,
     ],
-    stack: ["WordPress", "HTML", "CSS"],
+    stack: ['WordPress', 'HTML', 'CSS'],
   },
   {
-    title: "Sixty Four",
+    title: 'Sixty Four',
     description:
-      "Реализовал онлайн-бронирование столов, что упростило процесс резервирования для гостей.",
-    slug: "sixty-four",
+      'Реализовал онлайн-бронирование столов, что упростило процесс резервирования для гостей.',
+    slug: 'sixty-four',
     year: 2024,
-    githubUrl: "https://github.com/tiredtiredness/sixtyfour",
-    url: "https://rest64.netlify.app/",
+    githubUrl: 'https://github.com/tiredtiredness/sixtyfour',
+    url: 'https://rest64.netlify.app/',
     icon: Utensils,
     images: [
       `${IMAGE_BASE_PATH}/sixty-four/1.webp`,
       `${IMAGE_BASE_PATH}/sixty-four/2.webp`,
       `${IMAGE_BASE_PATH}/sixty-four/3.webp`,
     ],
-    stack: ["React", "EmailJs"],
+    stack: ['React', 'EmailJs'],
   },
 ];
