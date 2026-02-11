@@ -93,9 +93,9 @@ export const projects: Project[] = [
     url: "https://rest64.netlify.app/",
     icon: Utensils,
     images: [
-      `${IMAGE_BASE_PATH}/brut/1.webp`,
-      `${IMAGE_BASE_PATH}/brut/2.webp`,
-      `${IMAGE_BASE_PATH}/brut/3.webp`,
+      `${IMAGE_BASE_PATH}/sixty-four/1.webp`,
+      `${IMAGE_BASE_PATH}/sixty-four/2.webp`,
+      `${IMAGE_BASE_PATH}/sixty-four/3.webp`,
     ],
     stack: ["React", "EmailJs"],
   },
